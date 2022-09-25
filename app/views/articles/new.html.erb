@@ -1,0 +1,7 @@
+<h1>New article!</h1>
+
+<!-- Here, we are referencing the partial 'form'. While the filename for partials MUST
+begin with underscore (_) it is reference WITHOUT the underscore in the render call -->
+<%= render "form", article: @article %>
+
+<a href="<%= articles_path %>" style="margin-top: 20px">Back</a>

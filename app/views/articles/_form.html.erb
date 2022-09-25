@@ -1,0 +1,24 @@
+<!-- This is a partial view (thinking of it like a component?).
+
+Here, article is a parameter passed to the partial, not an instance variable on the controller.
+
+Also note that the filename MUST begin with underscore (_) -->
+<%=form_with model: article do |form|%>
+    <div>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+        <% @article.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :body %><br>
+        <%= form.text_field :body %>
+        <% @article.errors.full_messages_for(:body).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div><%= form.submit%></div>
+<% end %>
